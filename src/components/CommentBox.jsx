@@ -1,5 +1,5 @@
 import React from "react";
 
-export default () => {
+export default function CommentBox() {
   return <div>Comment Box</div>;
-};
+}
