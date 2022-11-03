@@ -4,10 +4,10 @@ import App from "components/App";
 import CommentBox from "components/CommentBox";
 import CommentList from "components/CommentList";
 
-let wraapped;
+let wrapped;
 
 beforeEach(() => {
-  wraapped = shallow(<App />);
+  wrapped = shallow(<App />);
 });
 
 it("shows a comment box", () => {
@@ -23,9 +23,9 @@ it("shows a comment box", () => {
     
     ReactDOM.unmountComponentAtNode(div);*/
 
-  expect(wraapped.find(CommentBox).length).toEqual(1);
+  expect(wrapped.find(CommentBox).length).toEqual(1);
 });
 
 it("shows a comment list", () => {
-  expect(wraapped.find(CommentList).length).toEqual(1);
+  expect(wrapped.find(CommentList).length).toEqual(1);
 });
