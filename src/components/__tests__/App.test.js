@@ -4,8 +4,14 @@ import App from "components/App";
 import CommentBox from "components/CommentBox";
 import CommentList from "components/CommentList";
 
-it('shows a comment box', () => {
-    /*const div = document.createElement('div');
+let wraapped;
+
+beforeEach(() => {
+  wraapped = shallow(<App />);
+});
+
+it("shows a comment box", () => {
+  /*const div = document.createElement('div');
     
     ReactDOM.render(<App />, div);
     
@@ -16,11 +22,10 @@ it('shows a comment box', () => {
     expect(div.innerHTML).toContain('Comment Box');
     
     ReactDOM.unmountComponentAtNode(div);*/
-    const wraapped = shallow(<App />);
-    expect(wraapped.find(CommentBox).length).toEqual(1);
+
+  expect(wraapped.find(CommentBox).length).toEqual(1);
 });
 
-it('shows a comment list', () => {
-    const wraapped = shallow(<App />);
-    expect(wraapped.find(CommentList).length).toEqual(1);
+it("shows a comment list", () => {
+  expect(wraapped.find(CommentList).length).toEqual(1);
 });
