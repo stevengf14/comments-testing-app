@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
+import { connect } from "react-redux";
+import * as actions from "../actions";
 
-export default function CommentBox() {
+function CommentBox() {
   const [comment, setComment] = useState("");
 
   const handleChange = (event) => {
@@ -11,9 +13,7 @@ export default function CommentBox() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // TODO: Call an action creator
-    // And save the comment
-
+    this.props.saveComment(this.state.comment);
     setComment("");
   };
 
@@ -27,3 +27,5 @@ export default function CommentBox() {
     </form>
   );
 }
+
+export default connect(null, actions)(CommentBox);
