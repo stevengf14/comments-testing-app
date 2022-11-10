@@ -3,7 +3,7 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
-function CommentBox() {
+function CommentBox(props) {
   const [comment, setComment] = useState("");
 
   const handleChange = (event) => {
@@ -12,8 +12,7 @@ function CommentBox() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    this.props.saveComment(this.state.comment);
+    props.saveComment(comment);
     setComment("");
   };
 
