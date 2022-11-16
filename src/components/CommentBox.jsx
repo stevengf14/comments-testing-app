@@ -25,7 +25,9 @@ function CommentBox(props) {
           <button>Submit Comment</button>
         </div>
       </form>
-      <button onClick={props.fetchComments}>Fetch Comments</button>
+      <button className="fetch-comments" onClick={props.fetchComments}>
+        Fetch Comments
+      </button>
     </div>
   );
 }
