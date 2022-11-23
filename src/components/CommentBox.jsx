@@ -1,23 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import { useNavigate } from "react-router-dom";
+import requiredAuth from "./requireAuth";
 
 function CommentBox(props) {
   const [comment, setComment] = useState("");
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    shouldNavigateAway();
-  });
-
-  const shouldNavigateAway = () => {
-    if (!props.auth) {
-      navigate("/");
-    }
-  };
 
   const handleChange = (event) => {
     setComment(event.target.value);
@@ -45,7 +33,4 @@ function CommentBox(props) {
   );
 }
 
-function mapStateToProps(state) {
-  return { auth: state.auth };
-}
-export default connect(mapStateToProps, actions)(CommentBox);
+export default connect(null, actions)(requiredAuth(CommentBox));
