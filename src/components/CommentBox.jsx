@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import requiredAuth from "./requireAuth";
+import requireAuth from "./requireAuth";
 
 function CommentBox(props) {
   const [comment, setComment] = useState("");
@@ -33,4 +33,4 @@ function CommentBox(props) {
   );
 }
 
-export default connect(null, actions)(requiredAuth(CommentBox));
+export default connect(null, actions)(requireAuth(CommentBox));

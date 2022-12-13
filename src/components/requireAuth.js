@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-export default function requiredAuth(ChildComponent) {
+export default function requireAuth(ChildComponent) {
   const ComposedComponent = (props) => {
     const navigate = useNavigate();
 
